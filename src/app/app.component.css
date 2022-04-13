@@ -1,0 +1,17 @@
+p{
+    color:black;
+    text-transform: capitalize;
+}
+h1{
+    color:rgb(22, 108, 108)
+}
+th{
+    color:blueviolet;
+    text-transform: uppercase;
+    text-decoration:underline;
+}
+.b{
+    border:2px solid yellowgreen;
+    width:35%;
+}
+img{justify-content: left;}

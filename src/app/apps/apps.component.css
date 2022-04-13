@@ -1,0 +1,20 @@
+.a{
+    border:2px solid goldenrod;
+    height:50vh;
+    width:40vw ;
+}
+.b{
+    border:2px solid green;
+    height:20vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.red{
+    background-color:red;
+}
+.green{
+    background-color: green;
+}

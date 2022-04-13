@@ -1,0 +1,57 @@
+<p>account works!</p>
+<h1>Accounts</h1>
+<input [(ngModel)]="filterTerm">
+<button (click)="filter()">filter</button>
+<select [(ngModel)]="page1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+</select>
+<select [(ngModel)]="limit">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+</select>
+<button (click)="page()">pagedata</button>
+<select [(ngModel)]="column">
+    <option>createdAt</option>
+    <option>available_balance</option>
+    <option>account_name</option>
+    <option>account_number</option>
+    <option>user_image</option>
+    <option>currency</option>
+</select>
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+</select>
+<button (click)="sort()">sort</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th>createdAt</th>
+            <th>account_name</th>
+            <th>available_balance</th>
+            <th>currency</th>
+            <th>user_image</th>
+            <th>account_number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let account of accounts">
+            <td>{{account.createdAt}}</td>
+            <td>{{account.account_name}}</td>
+            <td>{{account.available_balance}}</td>
+            <td>{{account.currency}}</td>
+            <td><img src={{account.user_image}} height="10%" width="10%"></td>
+            <td>{{account.account_number}}</td>
+        </tr>
+    </tbody>
+</table>

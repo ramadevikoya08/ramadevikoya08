@@ -1,0 +1,102 @@
+
+
+<h1>Rectangle</h1>
+<h3>height</h3>
+<input type="number"[(ngModel)]="num1">
+<h3>width</h3>
+<input type="number"[(ngModel)]="num2"><br>
+<button (click)="area()">area</button>
+<button (click)="perimeter()">perimeter</button>
+<p>area is {{areaResult}}</p>
+<p>perimeter is {{perimeterResult}}</p>
+
+
+<h1>Event Registration</h1>
+<input [(ngModel)]="name">
+<button (click)="Submit()">Register</button>
+<ul>
+    <li *ngFor="let name of names">
+        {{name}}
+        </li>
+    
+</ul>
+
+
+<h1>cart</h1>
+<label>product</label>
+<input [(ngModel)]="product"><br>
+<label>quantity</label>
+<input type="number" [(ngModel)]="quantity"><br>
+<label>price</label>
+<input type="number" [(ngModel)]="price"><br>
+<button (click)="Addtocart()">Add to cart</button><br>
+<h3>cart items</h3>
+<table>
+    <thead>
+        <tr>
+            <th>product</th>
+            <th>quantity</th>
+            <th>price</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of items">
+        <td>{{item.product}}</td>
+        <td>{{item.quantity}}</td>
+        <td>{{item.price}}</td>
+    </tr>
+    </tbody>
+
+    
+</table>
+
+
+
+<h1>Create account</h1>
+<label>name1:</label>
+<input [(ngModel)]="name1"><br>
+<label>email:</label>
+<input [(ngModel)]="email"><br>
+<label>phone:</label>
+<input type="number" [(ngModel)]="phone"><br>
+<label>city:</label>
+<input [(ngModel)]="city"><br>
+<button (click)="Signup()">Sign Up</button>
+<h3>List of Users </h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>city</th>
+        </tr>
+    </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+            <td>{{user.name1}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.city}}</td>
+            </tr>
+        </tbody>
+</table>
+
+<div>
+    <div class="a">
+        <div class="b" (click)="Change()" [ngClass]="isRed ? 'red':'green'">
+        
+
+        
+ 
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+

@@ -3,16 +3,50 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { HomeComponent } from './home/home.component';
+import { InterpolationComponent } from './interpolation/interpolation.component';
+import { EventbindingComponent } from './eventbinding/eventbinding.component';
+import { AppsComponent } from './apps/apps.component';
+import { VehiclesummeryComponent } from './vehiclesummery/vehiclesummery.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AccountsComponent } from './accounts/accounts.component';
+import {HttpClientModule} from'@angular/common/http';
+import { ProductsComponent } from './products/products.component';
+import { CreatevehicleComponent } from './createvehicle/createvehicle.component';
+import { CreateaccountsComponent } from './createaccounts/createaccounts.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    DashboardComponent,
+    PagenotfoundComponent,
+    HomeComponent,
+    InterpolationComponent,
+    EventbindingComponent,
+    AppsComponent,
+    VehiclesummeryComponent,
+    AccountsComponent,
+    ProductsComponent,
+    CreatevehicleComponent,
+    CreateaccountsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,FormsModule ,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+ }
+ 

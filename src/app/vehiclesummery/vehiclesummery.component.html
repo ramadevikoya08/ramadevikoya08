@@ -1,0 +1,65 @@
+<h3>Vehicle summery</h3>
+<input [(ngModel)]="filterTerm">
+<button (click)="filter()">filter</button>
+<select [(ngModel)]="column">
+    <option>color</option>
+    <option>manufacturer</option>
+    <option>Vehicle</option>
+    <option>type</option>
+    <option>fuel</option>
+    <option>image</option>
+    <option>id</option>
+</select> 
+<select [(ngModel)]="order">
+    <option>asc</option>
+    <option>desc</option>
+    
+</select>
+<button (click)="sort()">sort</button>
+<select [(ngModel)]="page1">
+    
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+</select>
+<select [(ngModel)]="limit">
+    <option>5</option>
+    <option>10</option>
+    <option>15</option>
+</select>
+<button (click)="page()">paged data</button>
+
+
+<table>
+    <thead>
+        <tr>
+            <th>Vehicle</th>
+            <th>manufaturer</th>
+            <th>model</th>
+            <th>type</th>
+            <th>fuel</th>
+            <th>color</th>
+            <th>image</th>
+            <th>id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Vehicle of Vehicles">
+            <td>{{Vehicle.Vehicle|uppercase}}</td>
+            <td>{{Vehicle.manufacturer}}</td>
+            <td>{{Vehicle.model|lowercase}}</td>
+            <td>{{Vehicle.type}}</td>
+            <td>{{Vehicle.fuel}}</td>
+            <td>{{Vehicle.color}}</td>
+            <td><img src={{Vehicle.image}} height="10%" width="10%"></td>
+            <td>{{Vehicle.id}}</td>
+        </tr>
+    </tbody>
+</table>
