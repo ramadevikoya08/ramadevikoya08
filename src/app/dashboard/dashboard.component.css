@@ -5,7 +5,7 @@
 
 }
 .left{
-    height:100vh;
+    height:200vh;
     width: 20vw;
     padding-left: 20px;
     text-transform: uppercase ;
@@ -21,7 +21,7 @@ button{
 }
 .right{
     background-color:rgb(201, 184, 216);
-    height:100vh;
+    height:200vh;
     width:80vw;
 }
 

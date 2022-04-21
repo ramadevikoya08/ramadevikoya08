@@ -1,0 +1,93 @@
+<p>employeedetails works!</p>
+<h2>employeedetails</h2>
+<pre>{{employee|json}}</pre>
+<div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+        <div class="row1">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h3>Name</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h3>:{{employee.name}}</h3>
+            </div>
+        </div>
+        <div class="row1">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h3>mobile</h3>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                <h3>:{{employee.mobile}}</h3>
+            </div>
+            <div class="row1">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <h3>email</h3>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                    <h3>:{{employee.email}}</h3>
+                </div>
+                <div class="row1">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3>dob</h3>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3>:{{employee.dob}}</h3>
+                    </div>
+                    </div>
+            </div>
+                    <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3>address</h3>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3>addressline</h3>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3>{{employee.address.addressline}}</h3>
+                    </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>city</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>{{employee.address.city}}</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>state</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>{{employee.address.state}}</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>pincode</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>{{employee.address.pincode}}</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>city</h3>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-12">
+                            <h3>{{employee.address.city}}</h3>
+                        </div>
+                    </div>
+            </div>
+
+        </div>
+        <h3>education</h3>
+        <table class="tabel table-stiped education-col">
+            <thead>
+                <tr>
+                    <th>qualification</th>
+                    <th>year</th>
+                    <th>percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let education of employee.education">
+                    <td>{{education.qualificatin}}</td>
+                    <td>{{education.year}}</td>
+                    <td>{{education.percentage}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    

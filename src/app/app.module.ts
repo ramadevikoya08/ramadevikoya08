@@ -17,6 +17,14 @@ import {HttpClientModule} from'@angular/common/http';
 import { ProductsComponent } from './products/products.component';
 import { CreatevehicleComponent } from './createvehicle/createvehicle.component';
 import { CreateaccountsComponent } from './createaccounts/createaccounts.component';
+import { EmployeeformComponent } from './employeeform/employeeform.component';
+import { EmployeetableComponent } from './employeetable/employeetable.component';
+import { EmployeedetailsComponent } from './employeedetails/employeedetails.component';
+import { RupeePipe } from './rupee.pipe';
+import { CurrencyPipe } from './currency.pipe';
+import { AboutUsModule } from './about-us/about-us.module';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
@@ -33,14 +41,23 @@ import { CreateaccountsComponent } from './createaccounts/createaccounts.compone
     AccountsComponent,
     ProductsComponent,
     CreatevehicleComponent,
-    CreateaccountsComponent
+    CreateaccountsComponent,
+    EmployeeformComponent,
+    EmployeetableComponent,
+
+    EmployeedetailsComponent,
+     RupeePipe,
+     CurrencyPipe,
+     ParentComponent,
+     ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,FormsModule ,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AboutUsModule
 
   ],
   providers: [],

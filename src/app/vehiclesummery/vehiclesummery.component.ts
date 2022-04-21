@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { VehicleService } from '../vehicle.service';
 
 @Component({
@@ -76,7 +77,22 @@ export class VehiclesummeryComponent implements OnInit {
       }
     )
   }
-
+  delete(Vehicleid:any)
+  {
+    this.vehicleService.deleteVehicle(Vehicleid).subscribe(
+      
+      (data:any)=>
+      {
+        alert("delete")
+      },
+      (error:any)=>
+      {
+        alert("error")
+      }
+      
+      )
+    
+  }
 
    
 

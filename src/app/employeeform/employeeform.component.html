@@ -1,0 +1,79 @@
+<p>employeeform works!</p>
+<form [formGroup]="EmployeeForm">
+    <label>name</label>
+    <input formControlName="name"><br>
+    <div *ngIf="EmployeeForm.get('name')?.touched && EmployeeForm.get('name')?.invalid">
+        <p class="error" *ngIf="EmployeeForm.get('name')?.errors?.['required']">*this field is required</p>
+        <p class="error" *ngIf="EmployeeForm.get('name')?.errors?.['minlength']">*you should enter min of 3 charecters</p>
+        <p class="error" *ngIf="EmployeeForm.get('name')?.errors?.['maxlength']">*you should enter max of 10 charecters</p>
+    </div>
+    <label>mobile</label>
+    <input formControlName="mobile">
+    <div *ngIf="EmployeeForm.get('mobile')?.touched && EmployeeForm.get('mobile')?.invalid">
+        <p class="error" *ngIf="EmployeeForm.get('mobile')?.errors?.['required']">*this field is required</p>
+        <p class="error" *ngIf="EmployeeForm.get('mobile')?.errors?.['minlength']">*you should enter min of 10 charecters</p>
+        <p class="error" *ngIf="EmployeeForm.get('mobile')?.errors?.['maxlength']">*you should enter max of 10 charecters</p>
+        </div><br>
+    <label>email</label>
+    <input formControlName="email"><br>
+    <label>dob</label>
+    <input formControlName="dob"><br>
+    <label>address</label>
+    <div formGroupName="address">
+        <label>addressline</label>
+        <input formControlName="addressline"><br>
+        <label>city</label>
+        <input formControlName="city"><br>
+        <label>state</label>
+        <input formControlName="state"><br>
+        <label>pincode</label>
+        <input formControlName="pincode"><br>
+        <div *ngIf="EmployeeForm.get('address')?.get('pincode')?.touched && EmployeeForm.get('address')?.get('pincode')?.invalid">
+            <p class="error" *ngIf="EmployeeForm.get('address')?.get('pincode')?.errors?.['required']">*this field is required</p>
+            <p class="error" *ngIf="EmployeeForm.get('address')?.get('pincode')?.errors?.['minlength']">*you should enter min of 10 charecters</p>
+            <p class="error" *ngIf="EmployeeForm.get('address')?.get('pincode')?.errors?.['maxlength']">*you should enter max of 10 charecters</p>
+        </div>
+    </div>
+        <label>education</label>
+     <div formArrayName="education">
+         <div *ngFor="let education of educationFormArray.controls;let i=index">
+            <div formGroupName="{{i}}">
+                <label>qualification</label>
+                <input formControlName="qualification"><br>
+                <label>year</label>
+                <input formControlName="year"><br>
+                <label>percentage</label>
+                <input formControlName="percentage"><br>
+                <div *ngIf="educationFormArray.controls[i]?.get('percentage')?.touched && educationFormArray.controls[i]?.get('percentage')?.invalid">
+                    <p class="error" *ngIf="educationFormArray.controls[i]?.get('percentage')?.errors?.['required']">*this field is required</p>
+                    <p class="error" *ngIf="educationFormArray.controls[i]?.get('percentage')?.errors?.['minlength']">*you should enter min of 10 charecters</p>
+                    <p class="error" *ngIf="educationFormArray.controls[i]?.get('percentage')?.errors?.['maxlength']">*you should enter max of 10 charecters</p>
+                </div>
+                
+            </div>
+            <button (click)="delete(i)">delete</button>
+        </div>
+     </div>
+
+    
+    <label>role:</label>
+                <label>FE</label>
+                <input type="radio"name="role"formControlName="role" value="FE">
+                <label>BE</label>
+                <input type="radio"name="role"formControlName="role"value="BE"><br>
+
+                <div *ngIf="EmployeeForm.get('role')?.value=='FE'">
+                <label>Html</label>
+                <input type="text"formControlName="Html"><br>
+                <label>Angular</label>
+                <input type="text"formControlName="Angular"><br></div>
+
+                <div *ngIf="EmployeeForm.get('role')?.value=='BE'">
+                <label>Java</label>
+                <input type="text"formControlName="Java"><br>
+                <label>Sql</label>
+                <input type="text"formControlName="sql"><br></div>
+
+                <button  (click)="submit()">submit</button>
+                <button (click)="add()">add</button><br>
+</form>

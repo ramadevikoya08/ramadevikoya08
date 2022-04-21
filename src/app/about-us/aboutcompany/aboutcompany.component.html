@@ -1,0 +1,12 @@
+<p>aboutcompany works!</p>
+<div>abc</div>
+<ng-container>xyz</ng-container>
+<ng-container *ngTemplateOutlet="true?blockone:blocktwo"></ng-container>
+<ng-template>def</ng-template>
+<ng-template #blockone>
+    <p>its true  block</p>
+</ng-template>
+<ng-template #blocktwo>
+    <p>its false block</p>
+</ng-template>
+

@@ -1,11 +1,14 @@
 <div>
-    <form>
+    <form [formGroup]="loginForm">
         <h1>sign in</h1>
-        <input type="text"placeholder="Username"><br>
-        <input type="text"placeholder="Password"><br>
+        <!-- <input type="text"placeholder="Username"><br> -->
+        <input formControlName="email">
+        <input formControlName="password">
+
+
         <input type="checkbox">
         <label>remember Password</label><br>
-        <button routerLink="/dashboard">signin</button><br>
+        <button (click)="signin()">signin</button><br>
         <button style="background-color: red;"><a href="https://mail.google.com/mail/u/0/#inbox" >G  sign in with google</a></button><br>
         <button><a href="https://www.facebook.com"style="background-color:blue;">f  sign with facebook</a></button>
     </form>

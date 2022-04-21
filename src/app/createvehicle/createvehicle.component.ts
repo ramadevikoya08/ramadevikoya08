@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { VehicleService } from '../vehicle.service';
 
 @Component({
   selector: 'app-createvehicle',
@@ -21,12 +22,26 @@ export class CreatevehicleComponent implements OnInit {
 
 
   )
+  
   submit()
   {
     console.log(this.vehicleForm);
+    console.log(this.vehicleForm.value);
+    this.vehicleService.postvehicle(this.vehicleForm.value).subscribe
+    (
+      (data:any)=>
+      {
+        alert("success");
+      },
+      (error:any)=>
+      {
+        alert("error");
+      
+      }
+    )
   }
 
-  constructor() { }
+  constructor(private vehicleService:VehicleService) { }
 
   ngOnInit(): void {
   }
